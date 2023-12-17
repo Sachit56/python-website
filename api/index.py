@@ -21,7 +21,7 @@ def run(state):
     print(state.plot_location)
 
     with open("data.txt","a") as f:
-        f.write(f'\n{state.plot_location},{state.plot_max_price},{state.plot_min_price}')
+        f.write(f'{state.plot_location} ,{state.plot_max_price} ,{state.plot_min_price}\n')
 
 
 
