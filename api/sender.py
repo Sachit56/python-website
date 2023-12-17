@@ -10,8 +10,13 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.connect((HOST, PORT))
     
     while True:
-        random_number1 = randint(1, 100)
-        random_number2 = randint(144, 1000)
-        s.sendall(f"{random_number1},{random_number2}".encode())
-        print(f"Sending: {random_number1},{random_number2}")
-        time.sleep(5)
+        with open("../data.txt","r") as f:
+            data=f.read()
+        # name, max, min =data.split(",")
+        print(data)
+
+     
+        random_number1 = randint(int(1), int(100))
+        s.sendall(f"{random_number1},".encode())
+        print(f"Sending: {random_number1}")
+        time.sleep(2)
